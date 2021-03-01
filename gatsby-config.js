@@ -1,38 +1,29 @@
 require(`dotenv`).config({
   path: `.env`,
-})
+});
 
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
+const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    // Used for the title template on pages other than the index site
+    siteTitle: `Michael Haar`,
+    // Default title of the page
+    siteTitleAlt: `Michael's Dev Blog`,
+    // Used for SEO
+    siteDescription: `My personal blog about full stack web development`,
+    // Will be set on the <html /> tag
+    siteLanguage: `en`,
+    // Twitter Handle
+    author: `michael haar`,
   },
   plugins: [
     {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       // See the theme's README for all available options
       options: {
-        navigation: [
-          {
-            title: `Blog`,
-            slug: `/blog`,
-          },
-          {
-            title: `About`,
-            slug: `/about`,
-          },
-        ],
-        externalLinks: [
-          {
-            name: `Twitter`,
-            url: `https://twitter.com/lekoarts_de`,
-          },
-          {
-            name: `Instagram`,
-            url: `https://www.instagram.com/lekoarts.de/`,
-          },
-        ],
+        navigation: [],
+        externalLinks: [],
       },
     },
     {
@@ -45,9 +36,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
-        short_name: `minimal-blog`,
-        description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
+        name: `Michael's Dev Blog`,
+        short_name: `Dev Blog`,
+        description: `My personal blog about full stack web development`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#6B46C1`,
@@ -56,11 +47,6 @@ module.exports = {
           {
             src: `/android-chrome-192x192.png`,
             sizes: `192x192`,
-            type: `image/png`,
-          },
-          {
-            src: `/android-chrome-512x512.png`,
-            sizes: `512x512`,
             type: `image/png`,
           },
         ],
@@ -78,4 +64,4 @@ module.exports = {
       },
     },
   ].filter(Boolean),
-}
+};
