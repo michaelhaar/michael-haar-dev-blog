@@ -1,0 +1,21 @@
+import Typist from "react-typist";
+import { Link } from "theme-ui";
+
+<Text sx={{ fontSize: [4, 5, 6], fontWeight: `bold`, color: `heading` }}>
+  <Typist
+    avgTypingDelay={100}
+    cursor={{
+      show: true,
+      blink: true,
+      element: "|",
+      hideWhenDone: true,
+      hideWhenDoneDelay: 500,
+    }}
+  >
+    Hello World!
+    <Typist.Backspace count={12} delay={2000} />
+    Hi There!
+  </Typist>
+</Text>
+
+I'm Michael Haar - A Full Stack Web Developer from Graz, Austria
