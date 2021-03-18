@@ -1,0 +1,118 @@
+---
+title: Creating my Personal Blog (Part 1)
+date: 2021-03-17
+tags:
+  - Blog, Gatsby,
+---
+
+I always wanted to have my own personal blog. Finally I had some time
+to build it from scratch
+
+
+
+# Requirements
+
+This is my first blog ever and therefore I wasn't really sure what I can expect.
+Unsually I when I start a new projects one of the first things I do is thinking
+about my requirements.
+
+I came up with the following expections/requirements:
+
+- My blog should have a custom URL/domain.
+  - (like `michaelhaar.dev` or `michaelhaar.at`).
+- It should be minimalistic. 
+  - (I thought I'll propably just need some code blocks and
+images!?)
+- I wanted to build it by myself.
+  - (I was thinking of some HTML and CSS files which are stored in a github
+  repository. Similar to the [Udacity Git Style Guide] which can be found
+at Github under [udacity/git-styleguide].)
+- I wanted to have a nice simplisitc welcome page.
+- I don't allow any advertisements.
+  - (Because I'm not planning to make any money with this blog.)
+- Total costs should be less than 100€ per year
+
+
+# Realization Steps 
+## Buying a Domain
+
+This step was really easy altough it was the first time that I bought a new 
+domain. First, I searched for the `biggest domain registrars` on Google, which gave
+me the following result:
+- Domain.com
+- Bluehost
+- HostGator
+- GoDaddy
+- Namecheap
+- DreamHost
+- Shopify
+- BuyDomains
+
+After that I checked if the availability and the price of my desired domain name
+on those sites. I ended up buying the domain name `michaelhaar.dev` at
+[Namecheap] for approximately 12€-13€ per year including taxes and privacy
+protection.
+
+TODO add screenshot here
+
+## Building the Blog Website.
+
+As already mentioned in the requirements section I wanted to build the blog by 
+myself or at least most parts of it. (I also tried [WordPress] but I
+didn't like it.)
+
+At first I wanted to write my blog posts directly in HTML and CSS, but I
+realised that it might be difficult to be consistent with all the styles and
+components. Therefore I decided to write my blog posts in markdown files and 
+use Gatsby to convert them into static HTML/CSS/JS files, which can be easily 
+distributed/hosted. Please check out my next blog post for more details about
+how I did this.
+
+After that, I searched for `Platforms to Host Static HTML Sites` on Google and
+it gave me these results:
+
+- Netlify
+- Vercel
+- Firebase
+- Fast.io
+- Render
+- Gitlab
+- GithubPages
+- Amazon AWS Amplify
+
+I decided to use Netlify, because it's has all the feature that I want (zero
+costs, automatic deployment from Github and many Gatsby examples use Netlify).
+
+TODO Add Screenshot
+
+## Changing the DNS
+
+Computers in the internet can be addressed by their IP-adress which usually look
+something like this `192.168.13.2`. Unfortunately these numbers are very hard to
+remember for our human brains. Therefore we introduced domain names, which are
+basically human friendly representations of the IP-adrresses. We can link the
+domain name `michaelhaar.dev` to the IP-address of our Netlify server
+by [changing the DNS]
+
+TODO add additional explaination
+
+# Testing
+
+# Summary
+
+Yaaay I did it! 
+
+- First, I started by thinking about the requirements. 
+- Then I bought the domain name `michaelhaar.dev`. 
+- Next I created a new Github repository, added a Gatsby Blog
+example, customized it and hosted the static HTML site on Netlify.
+- Finally I had to link my domain name and the IP-address of the Netlify server
+together by changing the DNS.  
+
+
+
+[Udacity Git Style Guide]: http://udacity.github.io/git-styleguide/
+[udacity/git-styleguide]: https://github.com/udacity/git-styleguide/
+[WordPress]: https://wordpress.com
+[Namecheap]: https://www.namecheap.com/
+[changing the DNS]: https://www.namecheap.com/support/knowledgebase/article.aspx/767/10/how-to-change-dns-for-a-domain/
