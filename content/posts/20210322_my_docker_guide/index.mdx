@@ -4,17 +4,18 @@ date: 2021-03-22
 tags:
   - Docker
   - Docker-Compose
+  - Cheatsheet
 ---
 
 ![Docker Guide Title Image](./images/docker_guide_image.png)
 
 Most web applications require multiple services, which need to work in parallel.
-One for the database, one for the webscraper, one for the Django Webserver, one
-for the Background Tasks and so on.
+One for the database, one for the Django web server, one for the background tasks
+and so on.
 
-> The proper setup, configuration and documentation of all those services gets
-> difficult very quickly. One solution is to automate these steps with [Docker]
-> and [Docker-Compose].
+> The proper manual setup, configuration and documentation of all those services
+> will get complicated very quickly. Therefore it's a good idea to automate
+> these steps with [Docker] and [Docker-Compose].
 
 This article is basically a cheatsheet containing my most used docker commands.
 
@@ -38,28 +39,27 @@ virtual machines **can be automated** by using [Images] and [Dockerfiles].
 Images are blueprints or a read-only template with instructions for creating
 a Docker container.
 
-We can think of Docker [Containers] as a lightweight virtual machine or a runnable
-instance of an image. We can **build**, **start**, **stop**, move, or delete a
-container using the Docker API or CLI. We can connect a container to one or more
-networks, attach storage to it, or even create a new image based on its current
-state.
+We can think of Docker [Containers] as lightweight virtual machines or a
+runnable instances of an image. We can **build**, **start**, **stop**, move, or
+delete a container using the Docker API or CLI. We can connect a container to
+one or more networks, attach storage to it, or even create a new image based on
+its current state.
 
 Next, I have to explain [Volumes]. Volumes enables us to mount a folder in the
-physical file system of our desktop (=host) machine into the virtual file system of a
-Docker container. So what happens is that when the container writes data to it's
-filesystem it gets replicated or automatically written on the host file system
-and vice versa. This is extremely useful for development. If we make changes
-to the files in our code editor, those changes are immediately visible in
-the Docker container.
+physical file system of our desktop (=host) machine into the virtual file system
+of a Docker container. So what happens is that when the container writes data to
+it's filesystem it gets replicated or automatically written on the host file
+system and vice versa. This is extremely useful during development, because any
+changes to the source code files will be immediately visible in the Docker
+container. 💪
 
 Next, we need a program called [Docker-Compose]. It's very common for
-applications to consist of multiple
-containers/services. Manually starting and stopping all
-those services can be very annoying and is prone to errors. This is where
-Docker-Compose comes it play. Compose is a tool for defining and running
-multi-container Docker applications. With Compose, we use a YAML file to configure
-our application’s services. Then, with a single command, we create and start
-all the services from our configuration.
+applications to consist of multiple containers/services. Manually starting and
+stopping all those containers/services can be very annoying and is prone to
+errors. This is where Docker-Compose comes into play. Compose is a tool for
+defining and running multi-container Docker applications. With Compose, we use a
+YAML file to configure our application’s services. Then, with a single command,
+we create and start all the services from our configuration.
 
 ## Summary 💡
 
@@ -73,10 +73,10 @@ all the services from our configuration.
 
 # Prerequisites / Installation
 
-Make sure **Docker** and **Docker-Compose** are installed on your machine by typing
-`docker-compose version` into your terminal program. It should show you the
-installed version of Docker Compose. Otherwise please follow the
-official [Docker Compose Install Guide] for your operating system.
+Make sure **Docker** and **Docker-Compose** are installed on your machine by
+typing `docker-compose version` into your terminal program. It should show you
+the installed version of Docker Compose. Otherwise please follow the official
+[Docker Compose Install Guide] for your operating system.
 
 Note for Ubuntu users:
 
@@ -309,10 +309,9 @@ docker-compose down
 ## "Low Disk Space on Filesystem root"
 
 One day I got the warning "low disk space on filesystem root", which was
-something I did not expect. Therefore it might be worth mentioning that images
-were stored in the root directory of my ubuntu machine (images were stored in
-the following directory: `/var/lib/docker/`). I realized that I had too many large
-(unused) images which consumed my disk space.
+something I did not expect. I realized that under Ubuntu images are stored in
+the root directory (`/var/lib/docker/`). My main problem was, that I had some
+large (unused) images lying around which consumed my disk space.
 
 You can pull some images and run `docker images` to see their actual image size.
 Here are some examples:
