@@ -1,0 +1,73 @@
+---
+title: NPM Beginner Summary
+date: 2021-04-24
+tags:
+  - npm
+  - Node
+  - yarn
+---
+
+Npm is used in almost every modern web development project. This article is part
+of my knowledge management and is just a small summary of the following article:
+
+[An Absolute Beginner's Guide to Using
+npm](https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/)
+
+## `package.json` 🏡
+
+manifest of your project. includes
+
+- the packages and applications it depends on,
+- information about its unique source control,
+- and specific metadata (project's name, description, and author)
+
+## `npm init`
+
+step-by-step tool to create a `package.json` file. Can be used to kickoff a new
+project.
+
+## Managing Dependencies 📦
+
+The main benefit of npm and the `package.json` file is that it contains a
+collection of all project's dependencies.
+
+- allows easy installation of given version
+- allows separation between Dev and Prod environment
+
+## `npm install` 📲
+
+- packages and modules will be installed in the `./node_modules` subfolder
+- `--save-dev` to install as Dev dependency
+- `--global` to install globally on system
+
+## `./node_modules` 🗂
+
+- directory where project dependencies are installed/stored.
+- dependencies don't have to be (and almost never should be)
+  bundled with the project itself => Exclude this folder in the version
+  control system
+
+## yarn
+
+- an alternative to npm
+- developed by Facebook.
+- Both are very similar.
+- Nowadays both are deterministic (same package versions will be used
+  on all installations).
+
+## `package-lock.json`
+
+- this file locks the dependencies to their exact versions (=> determinism)
+- ensures the same file structure in node_modules
+- should be add to the version control
+- equivalent to `yarn.lock`
+
+## Node.js 👾
+
+is an open-source, cross-platform, back-end JavaScript runtime environment that
+executes JavaScript code. Meaning you can feed in Javascript code and Node is
+able to run it on any operating system.
+
+> npm is a package manager for JavaScript to manage the project's dependencies.
+
+`I <3 coding`
